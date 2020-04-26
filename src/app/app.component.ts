@@ -7,7 +7,6 @@ import { createWorker } from 'tesseract.js';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'tesseract.js-angular-app';
   ocrResult = 'Recognizing...';
   constructor(){
     this.doOCR();
@@ -19,7 +18,7 @@ export class AppComponent {
     await worker.load();
     await worker.loadLanguage('eng');
     await worker.initialize('eng');
-    const { data: { text } } = await worker.recognize('https://tesseract.projectnaptha.com/img/eng_bw.png');
+    const { data: { text } } = await worker.recognize('../assets/IMG-2585.JPG');
     this.ocrResult = text;
     console.log(text);
     await worker.terminate();
