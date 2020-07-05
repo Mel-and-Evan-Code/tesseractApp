@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { createWorker } from 'tesseract.js';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
@@ -8,10 +9,13 @@ import { createWorker } from 'tesseract.js';
 })
 export class AppComponent {
   ocrResult = 'Recognizing...';
-  constructor(){
+  constructor(private http: HttpClient){
     this.doOCR();
   }
   async doOCR() {
+    //upload photot
+    //choose language 
+    //show stage and loading
     const worker = createWorker({
       logger: m => console.log(m),
     });
@@ -23,4 +27,6 @@ export class AppComponent {
     console.log(text);
     await worker.terminate();
   }
+
+
 }
