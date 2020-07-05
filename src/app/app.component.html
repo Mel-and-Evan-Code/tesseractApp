@@ -1,14 +1,10 @@
 
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <form ref='uploadForm' 
-      id='uploadForm' 
-      action='http://localhost:5000/upload' 
-      method='post' 
-      encType="multipart/form-data">
-        <input type="file" name="sampleFile" />
-        <input type='submit' value='Upload!' />
-    </form>  
+<div style="text-align:center"> 
+    <form action="http://localhost:5000/upload"
+      class="dropzone"
+      id="my-awesome-dropzone"></form>
+
 <img src="assets/IMG-2585.JPG" width="50%" />
 <h2>Result: </h2>
 <p>
